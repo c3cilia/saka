@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+
     modulePrefix: 'saka',
     environment: environment,
     baseURL: '/',
@@ -16,7 +17,11 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    contentSecurityPolicy: {
+      'img-src': ["'self'", "https://a.tiles.mapbox.com/"],
     }
+
   };
 
   if (environment === 'development') {
@@ -42,6 +47,5 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
-
   return ENV;
-};
+};  
